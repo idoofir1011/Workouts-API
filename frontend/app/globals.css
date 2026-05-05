@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans: var(--font-mplus);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    /* Bento Colors */
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+    /* Bento Theme Variables */
+    --background: #f3f4f6;
+    /* Slate-100 for that soft background */
+    --foreground: #1e293b;
+    /* Slate-800 for text */
+
+    --card: #ffffff;
+    --card-foreground: #1e293b;
+
+    --popover: #ffffff;
+    --popover-foreground: #1e293b;
+
+    /* Primary Action Button (Green for Add Food/Log Workout) - using a vibrant green like in the image */
+    --primary: #86efac;
+    /* Green-300ish */
+    --primary-foreground: #14532d;
+    /* Green-900 */
+
+    /* Secondary Action (Blue for Add Liquid/New Split) */
+    --secondary: #93c5fd;
+    /* Blue-300 */
+    --secondary-foreground: #1e3a8a;
+    /* Blue-900 */
+
+    /* Muted elements */
+    --muted: #f1f5f9;
+    /* Slate-100 */
+    --muted-foreground: #64748b;
+    /* Slate-500 */
+
+    --accent: #f8fafc;
+    /* Slate-50 */
+    --accent-foreground: #0f172a;
+    /* Slate-900 */
+
+    --destructive: #fca5a5;
+    /* Red-300 */
+    --destructive-foreground: #7f1d1d;
+    /* Red-900 */
+
+    --border: #e2e8f0;
+    /* Slate-200 */
+    --input: #e2e8f0;
+    --ring: #94a3b8;
+    /* Slate-400 */
+
+    --radius: 1rem;
+    /* Rounded-2xl default */
+}
+
+.dark {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+
+    --card: #1e293b;
+    --card-foreground: #f8fafc;
+
+    --popover: #1e293b;
+    --popover-foreground: #f8fafc;
+
+    --primary: #4ade80;
+    --primary-foreground: #14532d;
+
+    --secondary: #60a5fa;
+    --secondary-foreground: #1e3a8a;
+
+    --muted: #334155;
+    --muted-foreground: #94a3b8;
+
+    --accent: #1e293b;
+    --accent-foreground: #f8fafc;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #fef2f2;
+
+    --border: #334155;
+    --input: #334155;
+    --ring: #cbd5e1;
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
